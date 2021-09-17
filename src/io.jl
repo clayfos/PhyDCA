@@ -1,3 +1,5 @@
+using Printf
+
 function readData(filename::AbstractString)
 
     !isfile(filename) && error("Input file not found")
