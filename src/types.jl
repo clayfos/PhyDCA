@@ -13,7 +13,7 @@ mutable struct mfDCA <: PhylogeneticDistance end
 mutable struct plmDCA <: PhylogeneticDistance end
 UnionDistances=Union{Hamming,Correlation,pValue,MutualInfo,mfDCA,plmDCA}
 
-immutable PhyloOut 
+struct PhyloOut 
 	PhyloProfile::Array{Int8,2}
 	list_domains::Array{String,1}
 	list_species::Array{String,1}
