@@ -5,6 +5,7 @@ using GaussDCA
 using PlmDCA
 using PyPlot
 using Printf
+using LinearAlgebra
 
 export 
 	#phylogenetic distance class
