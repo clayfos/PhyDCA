@@ -15,7 +15,7 @@ export
 	PhyloOut,
 
 	#function
-    phydca,
+    	phydca,
 	make_phylo_profile,
 	evaluate_distance,
 	compute_distance_matrix
