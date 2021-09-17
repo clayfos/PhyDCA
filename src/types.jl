@@ -161,7 +161,7 @@ function evaluate_distance(::plmDCA,
     min_separation::Int = 1
     verbose::Bool = true
     method::Symbol = :LD_LBFGS 
-    boolmask::Union{Array{Bool,2},Void} = nothing
+    boolmask::Union{Array{Bool,2},Nothing} = nothing
     gaugecol::Int = -1
     
     M,N = size(P)
