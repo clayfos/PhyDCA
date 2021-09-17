@@ -124,7 +124,7 @@ function evaluate_distance(::mfDCA,
 	Pi, Pij = add_pseudocount(Pi_true, Pij_true, Meff, Float64(pseudocount))
 	C = compute_C(Pi, Pij)
 
-	mJ = -inv(cholfact(C))
+	mJ = -inv(cholesky(C))
 
 	S = correct_APC(mJ)
 
