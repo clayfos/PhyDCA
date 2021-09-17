@@ -1,5 +1,6 @@
 #P is the phylogenetic matrix which is M x N matrix, M=num species(configuration), N=num of domains (spins)
 using Printf
+using LinearAlgebra
 
 ##################################################
 # Evaluate hamming distance
