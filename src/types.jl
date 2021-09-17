@@ -5,12 +5,12 @@
 ## TYPE DEFINITION ####
 ############################
 abstract type PhylogeneticDistance end
-type Hamming <: PhylogeneticDistance end
-type Correlation <: PhylogeneticDistance end
-type MutualInfo <: PhylogeneticDistance end
-type pValue <: PhylogeneticDistance end
-type mfDCA <: PhylogeneticDistance end
-type plmDCA <: PhylogeneticDistance end
+mutable struct Hamming <: PhylogeneticDistance end
+mutable struct Correlation <: PhylogeneticDistance end
+mutable struct MutualInfo <: PhylogeneticDistance end
+mutable struct pValue <: PhylogeneticDistance end
+mutable struct mfDCA <: PhylogeneticDistance end
+mutable struct plmDCA <: PhylogeneticDistance end
 UnionDistances=Union{Hamming,Correlation,pValue,MutualInfo,mfDCA,plmDCA}
 
 immutable PhyloOut 
