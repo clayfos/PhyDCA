@@ -4,6 +4,7 @@ module PhyDCA
 using GaussDCA
 using PlmDCA
 using PyPlot
+using Printf
 
 export 
 	#phylogenetic distance class
