@@ -168,7 +168,7 @@ function evaluate_distance(::plmDCA,
     
     M,N = size(P)
 
-	P = ones(P)*2-P
+	P = ones(size(P))*2-P
 
     Z = Array{Int8}(P)
 
