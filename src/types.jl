@@ -152,8 +152,8 @@ end
 #
 
 function evaluate_distance(::plmDCA,
-#                          P::Matrix{Int8})
-                           P::Array{Int8})
+                           P::Matrix{Int8})
+#                          P::Array{Int8})
 
     lambdaJ::Real = 0.02
     lambdaH::Real = 0.05
@@ -168,7 +168,7 @@ function evaluate_distance(::plmDCA,
     
     M,N = size(P)
 
-	P = ones(P)*2-P
+	P = ones(Array{Int8}(P))*2-P
 
     Z = Array{Int8}(P)
 
