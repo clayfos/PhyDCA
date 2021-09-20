@@ -6,6 +6,7 @@ using PlmDCA
 using PyPlot
 using Printf
 using LinearAlgebra
+using DelimitedFiles
 
 export 
 	#phylogenetic distance class
