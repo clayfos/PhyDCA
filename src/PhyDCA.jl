@@ -290,7 +290,8 @@ end
 #
 function sort_matrix(final_matrix::Matrix,
 		     ::Union{Hamming,pValue})
-	sorted_matr=sortrows(final_matrix, by=x->x[3])
+	sorted_matr=sortslices(final_matrix,dims=1,by=x->x[3],rev=false)
+	#sorted_matr=sortrows(final_matrix, by=x->x[3])
 	return sorted_matr
 end
 function sort_matrix(final_matrix::Matrix,
