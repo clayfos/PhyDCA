@@ -137,7 +137,7 @@ compute_C(Pi::Vector{Float64}, Pij::Matrix{Float64}) = Pij - Pi * Pi'
 # APC correction (minimize backgroung influence like phylogeny and site entropy) 
 ##################################################
 function correct_APC(S::Matrix)
-    N = size(S,dims=1)
+    N = size(S,1)
     Si = sum(S,dims=1)
     Sj = sum(S,dims=2)
     Sa = sum(S) * (1 - 1/N)
