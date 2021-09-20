@@ -167,7 +167,7 @@ function evaluate_distance(::plmDCA,
     gaugecol::Int = -1
     
     M,N = size(P)
-
+#	P = ones(P)*2-P
 	P = ones(size(P))*2-P
 
     Z = Array{Int8}(P)
@@ -175,7 +175,9 @@ function evaluate_distance(::plmDCA,
 	q = Int(maximum(Z))
 
 	Pi_true, Pij_true, Meff, W = compute_new_frequencies(Z, theta)
-	plmalg =PlmDCA.PlmAlg(method,verbose, epsconv ,maxit, boolmask)
+#	plmalg =PlmDCA.PlmAlg(method,verbose, epsconv ,maxit, boolmask)
+	plmalg =PlmDCA.PlmAlg(method,verbose, epsconv ,maxit)
+
 	plmvar = PlmDCA.PlmVar(N,M,q,q*q,gaugecol,lambdaJ,lambdaH,Z,W)
     Jmat, pslike = PlmDCA.MinimizePLAsym(plmalg,plmvar)                
 
