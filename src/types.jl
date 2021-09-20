@@ -170,7 +170,8 @@ function evaluate_distance(::plmDCA,
 #	P = ones(P)*2-P
 	P = ones(size(P))*2-P
 
-    Z = Array{Int8}(P)
+#   Z = Array{Int8}(P)
+    Z = Array{Int8}(P')
 
 	q = Int(maximum(Z))
 
