@@ -235,7 +235,7 @@ function make_result_matrix(Jij::Matrix{Float64},
 			    list_domains::Array{String})
 	N=length(list_domains)
 	num=Int(N*(N-1)/2)
-	result_matrix=Matrix{Any}(num,3)
+	result_matrix=Matrix{Any}(undef,num,3)
 
 	cont=1
 	for i=1:N
