@@ -178,7 +178,9 @@ function evaluate_distance(::plmDCA,
 #	plmalg =PlmDCA.PlmAlg(method,verbose, epsconv ,maxit, boolmask)
 	plmalg =PlmDCA.PlmAlg(method,verbose, epsconv ,maxit)
 
-	plmvar = PlmDCA.PlmVar(N,M,q,q*q,gaugecol,lambdaJ,lambdaH,Z,W)
+#	plmvar = PlmDCA.PlmVar(N,M,q,q*q,gaugecol,lambdaJ,lambdaH,Z,W)
+	plmvar = PlmDCA.PlmVar(N,M,q,q*q,lambdaJ,lambdaH,Z,W)
+
     Jmat, pslike = PlmDCA.MinimizePLAsym(plmalg,plmvar)                
 
 	J = switch_gauge(Jmat, plmvar, min_separation)
