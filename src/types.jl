@@ -219,8 +219,10 @@ function switch_gauge(Jmat::Array{Float64,2}, var, min_separation::Int)
 
     #switch to Ising gauge
     for l = 1:Int(N*(N-1)/2)
-        J1[:,:,l] = Jtemp1[:,:,l] - repmat(mean(Jtemp1[:,:,l],dims=1),q,1) -repmat(mean(Jtemp1[:,:,l],dims=2),1,q) .+ mean(Jtemp1[:,:,l])
-        J2[:,:,l] = Jtemp2[:,:,l] - repmat(mean(Jtemp2[:,:,l],dims=1),q,1) -repmat(mean(Jtemp2[:,:,l],dims=2),1,q) .+ mean(Jtemp2[:,:,l])
+#        J1[:,:,l] = Jtemp1[:,:,l] - repmat(mean(Jtemp1[:,:,l],dims=1),q,1) -repmat(mean(Jtemp1[:,:,l],dims=2),1,q) .+ mean(Jtemp1[:,:,l])
+#        J2[:,:,l] = Jtemp2[:,:,l] - repmat(mean(Jtemp2[:,:,l],dims=1),q,1) -repmat(mean(Jtemp2[:,:,l],dims=2),1,q) .+ mean(Jtemp2[:,:,l])
+        J1[:,:,l] = Jtemp1[:,:,l] - repeat(mean(Jtemp1[:,:,l],dims=1),q,1) -repeat(mean(Jtemp1[:,:,l],dims=2),1,q) .+ mean(Jtemp1[:,:,l])
+        J2[:,:,l] = Jtemp2[:,:,l] - repeat(mean(Jtemp2[:,:,l],dims=1),q,1) -repeat(mean(Jtemp2[:,:,l],dims=2),1,q) .+ mean(Jtemp2[:,:,l])		
     end
     J = 0.5 * ( J1 + J2 )
 
